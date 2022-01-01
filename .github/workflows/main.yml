@@ -12,7 +12,8 @@ jobs:
     steps:
       - name: checkout repository
         uses: actions/checkout@v2
-        submodules: true
+        with:
+          submodules: true
       - name: build
         run: cargo build --verbose
       - name: run tests
@@ -24,7 +25,8 @@ jobs:
     steps:
     - name: checkout repository
       uses: actions/checkout@v2
-      submodules: true
+      with:
+        submodules: true
     - name: create container and publish to Docker Hub
       uses: hannes-hochreiner/gha-publish-on-docker-hub@v1.5.0
       with:
