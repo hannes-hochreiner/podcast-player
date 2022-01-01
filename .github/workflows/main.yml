@@ -10,19 +10,22 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Build
+      - name: checkout repository
+        uses: actions/checkout@v2
+        submodules: true
+      - name: build
         run: cargo build --verbose
-      - name: Run tests
+      - name: run tests
         run: cargo test --verbose
   publish:
-    name: Publish to Docker
+    name: publish to Docker
     needs: test
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repo
+    - name: checkout repository
       uses: actions/checkout@v2
-    - name: Create and publish to Docker Hub
+      submodules: true
+    - name: create container and publish to Docker Hub
       uses: hannes-hochreiner/gha-publish-on-docker-hub@v1.5.0
       with:
         docker-user-name: ${{ secrets.DOCKER_USER }}
