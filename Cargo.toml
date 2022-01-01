@@ -1,0 +1,7 @@
+[workspace]
+
+members = [
+    "podcast-player-pwa",
+    "podcast-player-api",
+    "podcast-player-common",
+]

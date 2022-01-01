@@ -1,0 +1,9 @@
+[submodule "podcast-player-common"]
+	path = podcast-player-common
+	url = git@github.com:hannes-hochreiner/podcast-player-common.git
+[submodule "podcast-player-pwa"]
+	path = podcast-player-pwa
+	url = git@github.com:hannes-hochreiner/podcast-player-pwa.git
+[submodule "podcast-player-api"]
+	path = podcast-player-api
+	url = git@github.com:hannes-hochreiner/podcast-player-api.git
