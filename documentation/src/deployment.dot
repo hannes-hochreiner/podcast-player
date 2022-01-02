@@ -1,0 +1,25 @@
+graph components {
+
+  auth0 [shape=box];
+
+  subgraph cluster_cloud {
+    label="Cloud Server";
+    proxy [label="reverse proxy", shape=component];
+    auth [label="authenticator", shape=component];
+    pwa_server [label="pwa server", shape=component];
+    pwa [shape=component, fillcolor=lightgrey, style=filled];
+    api [shape=component, fillcolor=lightgrey, style=filled];
+    updater [shape=component, fillcolor=lightgrey, style=filled];
+    postgres [shape=cylinder];
+  }
+
+  provider [label="podcast provider", shape=box];
+
+  proxy -- auth [label="/api"];
+  auth -- api;
+  {api, updater} -- postgres;
+  proxy -- pwa_server [label="/"];
+  pwa_server -- pwa;
+  auth0 -- auth;
+  updater -- provider;
+}

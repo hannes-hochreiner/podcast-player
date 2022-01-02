@@ -1,0 +1,45 @@
+graph {
+  rankdir=tb;
+
+  subgraph cluster_repository {
+    label=repository;
+    fillcolor=lightgrey;
+    style=filled;
+    node [style=filled, fillcolor=white, shape=box];
+
+    podcast_player [label="podcast-player"];
+    
+    {
+      rank=same;
+      podcast_player_api [label="podcast-player-api"];
+      podcast_player_common [label="podcast-player-common"];
+      podcast_player_pwa [label="podcast-player-pwa"];
+    }
+  }
+
+  subgraph cluster_component {
+    label=component;
+    rank=same;
+    fillcolor=lightgrey;
+    style=filled;
+    node [shape=component, style=filled, fillcolor=white];
+    api updater pwa
+  }
+
+  subgraph cluster_container {
+    label=container;
+    fillcolor=lightgrey;
+    style=filled;
+    node [shape=box, style=filled, fillcolor=white];
+    updater_cont [label="podcast-player:<version>-updater"];
+    api_cont [label="podcast-player:<version>-api"];
+    pwa_cont [label="podcast-player:<version>-pwa"];
+  }
+
+  podcast_player -- {podcast_player_api, podcast_player_common, podcast_player_pwa} [label="submodule"];
+  podcast_player_api -- {api, updater};
+  podcast_player_pwa -- pwa;
+  pwa -- pwa_cont;
+  api -- api_cont;
+  updater -- updater_cont;
+}
