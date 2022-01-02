@@ -18,8 +18,3 @@ FROM fedora:34 AS api
 MAINTAINER Hannes Hochreiner <hannes@hochreiner.net>
 COPY --from=builder /opt/podcast-player/target/release/rss-json-service /opt/podcast-player-api
 CMD ["/opt/podcast-player-api"]
-
-FROM fedora:34 AS updater
-MAINTAINER Hannes Hochreiner <hannes@hochreiner.net>
-COPY --from=builder /opt/podcast-player/target/release/updater /opt/podcast-player-updater
-CMD ["/opt/podcast-player-updater"]
