@@ -1158,7 +1158,7 @@ checksum = "58893f751c9b0412871a09abd62ecd2a00298c6c83befa223ef98c52aef40cbe"
 
 [[package]]
 name = "podcast-player-api"
-version = "2.1.2"
+version = "2.2.0"
 dependencies = [
  "anyhow",
  "chrono",
@@ -1178,7 +1178,7 @@ dependencies = [
 
 [[package]]
 name = "podcast-player-common"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "anyhow",
  "chrono",
@@ -1189,7 +1189,7 @@ dependencies = [
 
 [[package]]
 name = "podcast-player-pwa"
-version = "1.1.0"
+version = "1.2.0"
 dependencies = [
  "base64-url",
  "chrono",
