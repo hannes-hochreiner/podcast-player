@@ -23,7 +23,7 @@ graph {
     fillcolor=lightgrey;
     style=filled;
     node [shape=component, style=filled, fillcolor=white];
-    api updater pwa
+    api pwa
   }
 
   subgraph cluster_container {
@@ -31,15 +31,13 @@ graph {
     fillcolor=lightgrey;
     style=filled;
     node [shape=box, style=filled, fillcolor=white];
-    updater_cont [label="podcast-player:<version>-updater"];
     api_cont [label="podcast-player:<version>-api"];
     pwa_cont [label="podcast-player:<version>-pwa"];
   }
 
   podcast_player -- {podcast_player_api, podcast_player_common, podcast_player_pwa} [label="submodule"];
-  podcast_player_api -- {api, updater};
+  podcast_player_api -- api;
   podcast_player_pwa -- pwa;
   pwa -- pwa_cont;
   api -- api_cont;
-  updater -- updater_cont;
 }

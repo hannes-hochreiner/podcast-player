@@ -9,7 +9,6 @@ graph components {
     pwa_server [label="pwa server", shape=component];
     pwa [shape=component, fillcolor=lightgrey, style=filled];
     api [shape=component, fillcolor=lightgrey, style=filled];
-    updater [shape=component, fillcolor=lightgrey, style=filled];
     postgres [shape=cylinder];
   }
 
@@ -17,9 +16,9 @@ graph components {
 
   proxy -- auth [label="/api"];
   auth -- api;
-  {api, updater} -- postgres;
+  api -- postgres;
   proxy -- pwa_server [label="/"];
   pwa_server -- pwa;
   auth0 -- auth;
-  updater -- provider;
+  api -- provider;
 }

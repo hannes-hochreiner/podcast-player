@@ -8,7 +8,7 @@ A simple offline-first app for listening to podcasts.
 Since podcast feeds can - in general - not be accessed directly from a web application, a backend component was implemented.
 The objects shared between the frontend and backend are maintained in a "common" repository.
 Hence, there are three repositories (api, pwa, common), which are submodules to this repository.
-From these repositories, the three components (api, pwa, updater) are created using GitHub actions.
+From these repositories, the two components (api, pwa) are created using GitHub actions.
 For each component, a Docker container is created and tagged with the version number and component type.
 
 ![component diagram](documentation/build/components.svg)
