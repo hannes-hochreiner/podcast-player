@@ -2,6 +2,14 @@
 # Podcast Player
 
 A simple offline-first app for listening to podcasts.
+There are three submodules making up this project.
+The submodules are hosted in their own repositories.
+
+| Repository | Status |
+|---|---|
+|[podcast-player-api](https://github.com/hannes-hochreiner/podcast-player-api)|[![CI](https://github.com/hannes-hochreiner/podcast-player-api/actions/workflows/main.yml/badge.svg)](https://github.com/hannes-hochreiner/podcast-player-api/actions/workflows/main.yml)|
+|[podcast-player-common](https://github.com/hannes-hochreiner/podcast-player-common)|[![CI](https://github.com/hannes-hochreiner/podcast-player-common/actions/workflows/main.yml/badge.svg)](https://github.com/hannes-hochreiner/podcast-player-common/actions/workflows/main.yml)|
+|[podcast-player-pwa](https://github.com/hannes-hochreiner/podcast-player-pwa)|[![CI](https://github.com/hannes-hochreiner/podcast-player-pwa/actions/workflows/main.yml/badge.svg)](https://github.com/hannes-hochreiner/podcast-player-pwa/actions/workflows/main.yml)|
 
 ## Components
 
