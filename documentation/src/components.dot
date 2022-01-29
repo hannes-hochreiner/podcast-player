@@ -37,6 +37,7 @@ graph {
 
   podcast_player -- {podcast_player_api, podcast_player_common, podcast_player_pwa} [label="submodule"];
   podcast_player_api -- api;
+  podcast_player_common -- {api,pwa};
   podcast_player_pwa -- pwa;
   pwa -- pwa_cont;
   api -- api_cont;
