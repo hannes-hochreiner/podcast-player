@@ -16,7 +16,7 @@ MAINTAINER Hannes Hochreiner <hannes@hochreiner.net>
 COPY --from=builder /opt/podcast-player/podcast-player-pwa/dist /usr/share/nginx/html
 COPY --from=builder /opt/podcast-player/nginx.conf /etc/nginx/nginx.conf
 
-FROM fedora:34 AS api
+FROM fedora:36 AS api
 MAINTAINER Hannes Hochreiner <hannes@hochreiner.net>
 COPY --from=builder /opt/podcast-player/target/release/rss-json-service /opt/podcast-player-api
 CMD ["/opt/podcast-player-api"]
