@@ -914,7 +914,7 @@ checksum = "1df8c4ec4b0627e53bdf214615ad287367e482558cf84b109250b37464dc03ae"
 
 [[package]]
 name = "podcast-player-api"
-version = "2.3.1"
+version = "2.4.0"
 dependencies = [
  "anyhow",
  "bb8",
@@ -961,7 +961,7 @@ dependencies = [
 
 [[package]]
 name = "podcast-player-pwa"
-version = "1.4.1"
+version = "1.5.0"
 dependencies = [
  "base64-url",
  "chrono",
