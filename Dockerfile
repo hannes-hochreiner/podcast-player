@@ -10,9 +10,10 @@ COPY Cargo.* /opt/podcast-player/
 RUN source $HOME/.cargo/env && cd /opt/podcast-player/podcast-player-pwa && trunk build --release
 RUN source $HOME/.cargo/env && cd /opt/podcast-player && cargo build --release -p podcast-player-api
 
-FROM h0h4/pwa-server:v1.1.0 AS pwa
+FROM nginx:stable-alpine AS pwa
 MAINTAINER Hannes Hochreiner <hannes@hochreiner.net>
-COPY --from=builder /opt/podcast-player/podcast-player-pwa/dist /opt/podcast-player/dist
+COPY --from=builder /opt/podcast-player/podcast-player-pwa/dist /usr/share/nginx/html
+COPY --from=builder /opt/podcast-player/nginx.conf /etc/nginx/nginx.conf
 
 FROM fedora:34 AS api
 MAINTAINER Hannes Hochreiner <hannes@hochreiner.net>
