@@ -1,4 +1,4 @@
-FROM fedora:34 AS builder
+FROM fedora:36 AS builder
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 RUN dnf install gcc openssl-devel -y
 RUN source $HOME/.cargo/env && cargo install --locked trunk && rustup target add wasm32-unknown-unknown
