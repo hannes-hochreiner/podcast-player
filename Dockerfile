@@ -7,6 +7,7 @@ COPY podcast-player-api /opt/podcast-player/podcast-player-api
 COPY podcast-player-common /opt/podcast-player/podcast-player-common
 COPY podcast-player-pwa /opt/podcast-player/podcast-player-pwa
 COPY Cargo.* /opt/podcast-player/
+COPY nginx.conf /opt/podcast-player/nginx.conf
 RUN source $HOME/.cargo/env && cd /opt/podcast-player/podcast-player-pwa && trunk build --release
 RUN source $HOME/.cargo/env && cd /opt/podcast-player && cargo build --release -p podcast-player-api
 
